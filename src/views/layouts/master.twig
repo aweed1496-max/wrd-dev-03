@@ -189,11 +189,11 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 64px;
-            height: 90px;
+            width: 44px;
+            height: 44px;
             z-index: 50;
             pointer-events: none;
-            filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.15));
+            filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.2));
             transition: transform 0.35s ease-out;
         }
 
@@ -204,115 +204,46 @@
             z-index: 40;
         }
 
-        .character-shadow {
+        .scroll-arrow {
             position: absolute;
-            bottom: 4px;
-            left: 50%;
-            width: 30px;
-            height: 8px;
-            transform: translateX(-50%);
-            background: radial-gradient(circle, rgba(15, 23, 42, 0.18), transparent 70%);
-            filter: blur(2px);
+            inset: 0;
         }
 
-        .character-head {
-            position: absolute;
-            top: 2px;
-            left: 50%;
-            width: 44px;
-            height: 44px;
-            transform: translateX(-50%);
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, #FDE9D2, #F7CFA8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            transition: transform 0.6s ease;
-        }
-
-        .character-eye {
-            width: 13px;
-            height: 16px;
-            border-radius: 50%;
-            background: #1F2937;
-            position: relative;
-        }
-
-        .character-eye::after {
+        .scroll-arrow::before {
             content: '';
             position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background: #fff;
-        }
-
-        .character-body {
-            position: absolute;
-            top: 38px;
-            left: 50%;
-            width: 38px;
-            height: 34px;
-            transform: translateX(-50%);
-            border-radius: 20px;
-            background: linear-gradient(135deg, #A78BFA, #6366F1);
-        }
-
-        .character-arm {
-            position: absolute;
-            top: 52px;
-            left: 50%;
-            width: 24px;
-            height: 8px;
-            transform: translateX(10px) rotate(25deg);
-            transform-origin: left center;
-            border-radius: 999px;
-            background: #F7CFA8;
-            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
-            transition: transform 0.4s ease;
-        }
-
-        .character-arm::after {
-            content: '';
-            position: absolute;
-            right: -5px;
+            left: 4px;
             top: 50%;
-            width: 10px;
-            height: 10px;
+            width: 28px;
+            height: 6px;
             transform: translateY(-50%);
-            border-radius: 50%;
-            background: #FDE9D2;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #0f172a, #64748b);
         }
 
-        .character-legs {
+        .scroll-arrow::after {
+            content: '';
             position: absolute;
-            top: 66px;
-            left: 50%;
-            display: flex;
-            gap: 5px;
-            transform: translateX(-50%);
+            right: 4px;
+            top: 50%;
+            width: 0;
+            height: 0;
+            transform: translateY(-50%);
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            border-left: 14px solid #0f172a;
         }
 
-        .character-legs span {
-            width: 9px;
-            height: 16px;
-            border-radius: 10px;
-            background: #1F2937;
+        .scroll-character.is-looking .scroll-arrow {
+            transform: scale(1.05);
         }
 
-        .scroll-character.is-looking .character-head {
-            transform: translateX(-50%) translateY(-6px) rotate(-6deg);
+        .scroll-character.is-happy .scroll-arrow {
+            transform: scale(1.08);
         }
 
-        .scroll-character.is-happy .character-head {
-            transform: translateX(-50%) translateY(-4px) rotate(6deg);
-        }
-
-        .scroll-character.is-pointing .character-arm {
-            transform: translateX(18px) rotate(5deg);
+        .scroll-character.is-pointing .scroll-arrow {
+            transform: scale(1.08) rotate(-6deg);
         }
 
         .footstep {
