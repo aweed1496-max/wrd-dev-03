@@ -8,8 +8,8 @@
 {% set important_links = theme.settings.get('important_links') %}
 <header class="store-header">
   {# Top Nav #}
-  <div class="top-navbar">
-    <div class="container flex justify-between">
+  <div class="top-navbar" style="background: #ffffff;">
+    <div class="container flex justify-between" style="background: #ffffff; border-radius: 20px; box-shadow: 10px 10px 24px var(--home-shadow-dark), -10px -10px 24px var(--home-shadow-light); padding: 0.75rem 1.5rem;">
       <div class="flex-1 flex items-center gap-2">
           {# Footer Menu #}
           {% if important_links %}
@@ -46,8 +46,8 @@
   </div>
 
   {# Main Nav #}
-  <div id="mainnav" class="main-nav-container shadow-default bg-white flex items-center">
-      <div class="inner bg-inherit w-full">
+  <div id="mainnav" class="main-nav-container shadow-default bg-white flex items-center" style="background: #ffffff !important;">
+    <div class="inner bg-inherit w-full" style="background: #ffffff !important;">
           <div class="container">
               <div class="flex items-stretch justify-between relative">
                   <div class="flex items-center">

@@ -151,7 +151,7 @@
             "icon": "sicon-paint",
             "label": "لون خلفية الصفحة الرئيسية",
             "id": "home_bg_color",
-            "value": "#f7f5f0",
+            "value": "#ffffff",
             "required": false,
             "format": "text",
             "description": "مثال: #f7f5f0"
@@ -161,7 +161,7 @@
             "icon": "sicon-paint",
             "label": "لون خلفية الأقسام البديلة",
             "id": "home_alt_bg_color",
-            "value": "#faf8f3",
+            "value": "#ffffff",
             "required": false,
             "format": "text",
             "description": "مثال: #faf8f3"
@@ -191,7 +191,7 @@
             "icon": "sicon-paint",
             "label": "لون خلفية البطاقات",
             "id": "home_card_bg_color",
-            "value": "#f3f1ec",
+            "value": "#ffffff",
             "required": false,
             "format": "text",
             "description": "مثال: #f3f1ec"
@@ -211,7 +211,7 @@
             "icon": "sicon-paint",
             "label": "ظل البطاقة الداكن",
             "id": "home_shadow_dark",
-            "value": "#d9d6cf",
+            "value": "#e3e7ee",
             "required": false,
             "format": "text",
             "description": "مثال: #d9d6cf"
@@ -231,7 +231,7 @@
             "icon": "sicon-paint",
             "label": "لون خلفية القائمة الرئيسية",
             "id": "menu_bg_color",
-            "value": "#f7f5f0",
+            "value": "#ffffff",
             "required": false,
             "format": "text",
             "description": "مثال: #f7f5f0"
@@ -251,7 +251,7 @@
             "icon": "sicon-paint",
             "label": "ظل القائمة الداكن",
             "id": "menu_shadow_dark",
-            "value": "#d9d6cf",
+            "value": "#e3e7ee",
             "required": false,
             "format": "text",
             "description": "مثال: #d9d6cf"
@@ -473,23 +473,23 @@
             "icon": "sicon-list-add",
             "value": [
                 {
-                    "logo.name": "أريج",
-                    "logo.image": "",
+                    "logo.name": "Logo One",
+                    "logo.image": "images/logos/logo-1.svg",
                     "logo.url": ""
                 },
                 {
-                    "logo.name": "لمعة",
-                    "logo.image": "",
+                    "logo.name": "Logo Two",
+                    "logo.image": "images/logos/logo-2.svg",
                     "logo.url": ""
                 },
                 {
-                    "logo.name": "سُكرة",
-                    "logo.image": "",
+                    "logo.name": "Logo Three",
+                    "logo.image": "images/logos/logo-3.svg",
                     "logo.url": ""
                 },
                 {
-                    "logo.name": "مِداد",
-                    "logo.image": "",
+                    "logo.name": "Logo Four",
+                    "logo.image": "images/logos/logo-4.svg",
                     "logo.url": ""
                 }
             ],

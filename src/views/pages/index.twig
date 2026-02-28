@@ -7,8 +7,22 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    <div class="home-theme">
-        <section class="relative overflow-hidden" style="background: linear-gradient(180deg, var(--home-alt-bg), var(--home-bg));">
+    <div class="home-theme" style="background: #ffffff;">
+        <div id="scroll-footprints" class="scroll-footprints" aria-hidden="true"></div>
+        <div id="scroll-character" class="scroll-character" aria-hidden="true">
+            <div class="character-shadow"></div>
+            <div class="character-head">
+                <span class="character-eye"></span>
+                <span class="character-eye"></span>
+            </div>
+            <div class="character-body"></div>
+            <div class="character-arm"></div>
+            <div class="character-legs">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <section class="relative overflow-hidden" style="background: #ffffff;">
             <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-violet-300/40 via-purple-200/40 to-blue-200/10 blur-[140px]"></div>
             <div class="absolute bottom-0 -left-32 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-blue-200/30 via-cyan-200/20 to-transparent blur-[160px]"></div>
             <div class="container relative z-10 py-20 lg:py-28">
@@ -24,7 +38,7 @@
                             نقدم حلول هوية بصرية، جرافيك احترافي، موشن جرافيك، مونتاج، وتصميم ثلاثي الأبعاد بأسلوب عصري فاخر.
                         </p>
                         <div class="mt-8 flex flex-wrap gap-4">
-                            <a href="#pricing" class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0b102b] shadow-lg shadow-white/20 transition hover:-translate-y-0.5">
+                            <a href="#pricing" data-scroll-stop="true" class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0b102b] shadow-lg shadow-white/20 transition hover:-translate-y-0.5">
                                 ابدأ الآن
                             </a>
                             <a href="#services" class="rounded-xl border border-transparent bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-[6px_6px_14px_var(--home-shadow-dark),-6px_-6px_14px_var(--home-shadow-light)] transition hover:-translate-y-0.5">
@@ -32,15 +46,15 @@
                             </a>
                         </div>
                         <div class="mt-10 grid gap-4 sm:grid-cols-3">
-                            <div class="home-neu-card p-4">
+                                <div class="home-cta-card p-4">
                                 <p class="text-2xl font-semibold">+50K</p>
                                 <p class="text-sm home-text-muted">عميل عالمي</p>
                             </div>
-                            <div class="home-neu-card p-4">
+                                <div class="home-cta-card p-4">
                                 <p class="text-2xl font-semibold">+12K</p>
                                 <p class="text-sm home-text-muted">مشروع ناجح</p>
                             </div>
-                            <div class="home-neu-card p-4">
+                                <div class="home-cta-card p-4">
                                 <p class="text-2xl font-semibold">24/7</p>
                                 <p class="text-sm home-text-muted">دعم احترافي</p>
                             </div>
@@ -73,7 +87,7 @@
             </div>
         </section>
 
-        <section id="services" class="py-20" style="background: var(--home-alt-bg);">
+    <section id="services" class="py-20" style="background: #ffffff;">
             <div class="container">
                 <div class="max-w-2xl">
                     <p class="text-sm font-semibold text-violet-600">خدماتنا</p>
@@ -88,7 +102,7 @@
                         {id: 'service-pitch', title: 'دورة العرض الاحترافي', price: '255', desc: 'منتج رقمي احترافي لتطوير العروض التقديمية.'}
                     ] %}
                     {% for service in services %}
-                        <div id="{{ service.id }}" class="group home-neu-card p-6 transition hover:-translate-y-1">
+                        <div id="{{ service.id }}" class="group home-cta-card p-6 transition hover:-translate-y-1">
                             <div class="mb-6 h-12 w-12 rounded-2xl bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500"></div>
                             <h3 class="text-lg font-semibold">{{ service.title }}</h3>
                             <p class="mt-3 text-sm home-text-muted">{{ service.desc }}</p>
@@ -97,7 +111,7 @@
                                     <span class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold home-text-muted shadow-[4px_4px_10px_var(--home-shadow-dark),-4px_-4px_10px_var(--home-shadow-light)]">
                                         {{ service.price }} ريال
                                     </span>
-                                    <a href="#pricing" class="rounded-lg bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5">
+                                    <a href="#pricing" data-scroll-stop="true" class="rounded-lg bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5">
                                         شراء الآن
                                     </a>
                                 </div>
@@ -108,7 +122,7 @@
             </div>
         </section>
 
-        <section id="portfolio" class="py-20" style="background: var(--home-bg);">
+    <section id="portfolio" class="py-20" style="background: #ffffff;">
             <div class="container">
                 {% set enable_logo_ticker = theme.settings.get('enable_logo_ticker', true) %}
                 {% set logo_ticker_title = theme.settings.get('logo_ticker_title', 'شعارات صممناها بعناية') %}
@@ -116,39 +130,37 @@
                 {% set logo_items = theme.settings.get('logo_ticker_items', []) %}
                 {% if logo_items is empty %}
                     {% set logo_items = [
-                        {'logo.name': 'أريج'}, {'logo.name': 'لمعة'}, {'logo.name': 'سُكرة'},
-                        {'logo.name': 'مِداد'}, {'logo.name': 'أصالة'}, {'logo.name': 'زُهرة'},
-                        {'logo.name': 'أفق'}, {'logo.name': 'نور'}, {'logo.name': 'رواء'}, {'logo.name': 'أصيل'}
+                        {'logo.image': 'images/logos/logo-1.svg'},
+                        {'logo.image': 'images/logos/logo-2.svg'},
+                        {'logo.image': 'images/logos/logo-3.svg'},
+                        {'logo.image': 'images/logos/logo-4.svg'}
                     ] %}
                 {% endif %}
                 {% if enable_logo_ticker %}
-                    <div class="mb-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+                    <div class="mb-10 grid gap-6">
                         <div>
                             <p class="text-sm font-semibold text-violet-600">علامات وثقت بنا</p>
                             <h2 class="mt-3 text-2xl font-semibold sm:text-3xl">{{ logo_ticker_title }}</h2>
                             <p class="mt-3 text-slate-600">{{ logo_ticker_description }}</p>
                         </div>
-                        <div class="relative overflow-hidden rounded-3xl bg-[#f3f1ec] px-6 py-4 shadow-[10px_10px_24px_#d9d6cf,-10px_-10px_24px_#ffffff]">
-                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#f3f1ec] via-transparent to-[#f3f1ec]"></div>
-                            <div class="flex items-center gap-6 whitespace-nowrap" style="animation: marquee-rtl 18s linear infinite;">
+                        <div class="relative w-full overflow-hidden px-6 py-4">
+                            <div class="pointer-events-none absolute inset-0" style="background: linear-gradient(90deg, transparent, transparent 35%, transparent 65%, transparent);"></div>
+                            <div class="flex items-center gap-10 whitespace-nowrap" style="animation: marquee-rtl 18s linear infinite;">
                                 {% for logo in logo_items %}
                                     {% set logo_name = logo['logo.name']|default(logo.name|default('')) %}
                                     {% set logo_image = logo['logo.image']|default(logo.image|default('')) %}
                                     {% set logo_url = logo['logo.url']|default(logo.url|default('')) %}
-                                    {% set logo_content %}
-                                        {% if logo_image %}
-                                            <img src="{{ logo_image }}" alt="{{ logo_name }}" class="h-8 w-auto max-w-[96px] object-contain" loading="lazy" />
-                                        {% else %}
-                                            {{ logo_name }}
-                                        {% endif %}
-                                    {% endset %}
-                                    <div class="flex h-12 w-28 items-center justify-center rounded-2xl bg-[#f3f1ec] text-sm font-semibold text-slate-600 shadow-[6px_6px_14px_#d9d6cf,-6px_-6px_14px_#ffffff]">
+                                    {% if logo_image %}
                                         {% if logo_url %}
-                                            <a href="{{ logo_url }}" class="flex h-full w-full items-center justify-center">{{ logo_content }}</a>
+                                            <a href="{{ logo_url }}" class="flex items-center justify-center">
+                                                <img src="{{ logo_image | asset }}" alt="{{ logo_name }}" class="h-10 w-auto max-w-[140px] object-contain opacity-90" loading="lazy" />
+                                            </a>
                                         {% else %}
-                                            {{ logo_content }}
+                                            <div class="flex items-center justify-center">
+                                                <img src="{{ logo_image | asset }}" alt="{{ logo_name }}" class="h-10 w-auto max-w-[140px] object-contain opacity-90" loading="lazy" />
+                                            </div>
                                         {% endif %}
-                                    </div>
+                                    {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
@@ -164,7 +176,9 @@
                                 <p class="mt-3 home-text-muted">{{ portfolio_description }}</p>
                             {% endif %}
                     </div>
-                    <a href="#" class="rounded-xl border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-slate-300">عرض الكل</a>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="#" data-scroll-stop="true" class="rounded-xl border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-600 shadow-sm transition hover:border-slate-300">عرض الكل</a>
+                    </div>
                 </div>
                 <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {% set portfolio_items = theme.settings.get('portfolio_items', []) %}
@@ -185,7 +199,7 @@
                             {% set item_description = item['portfolio.description']|default(item.description|default('')) %}
                             {% set item_image = item['portfolio.image']|default(item.image|default('images/placeholder.png')) %}
                             {% set item_url = item['portfolio.url']|default(item.url|default('')) %}
-                        <article class="group home-neu-card p-5 transition hover:-translate-y-1">
+                        <article class="group home-cta-card p-5 transition hover:-translate-y-1">
                             <div class="overflow-hidden rounded-2xl">
                                     <img class="h-52 w-full object-cover transition duration-500 group-hover:scale-105" src="{{ item_image | asset }}" alt="{{ item_title ?: 'عمل' }}">
                             </div>
@@ -206,10 +220,15 @@
                         </article>
                     {% endfor %}
                 </div>
+                {% set whatsapp_number = store.contacts.whatsapp|default('') %}
+                {% set whatsapp_link = whatsapp_number ? whatsapp_number : '966500000000' %}
+                <div class="mt-8 flex justify-center">
+                    <a href="https://wa.me/{{ whatsapp_link }}" data-scroll-stop="true" class="rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5">اطلب الآن</a>
+                </div>
             </div>
         </section>
 
-        <section id="features" class="py-20" style="background: var(--home-alt-bg);">
+    <section id="features" class="py-20" style="background: #ffffff;">
             <div class="container">
                 <div class="max-w-2xl">
                     <p class="text-sm font-semibold text-violet-600">المميزات</p>
@@ -225,7 +244,7 @@
                         {title: 'نتائج مؤثرة', desc: 'تصاميم ترفع الانطباع وتزيد التفاعل.'}
                     ] %}
                     {% for feature in features %}
-                        <div class="home-neu-card p-6 transition hover:-translate-y-1">
+                        <div class="home-cta-card p-6 transition hover:-translate-y-1">
                             <div class="mb-4 h-10 w-10 rounded-xl bg-gradient-to-br from-violet-500 to-blue-500"></div>
                             <h3 class="text-lg font-semibold">{{ feature.title }}</h3>
                             <p class="mt-3 text-sm home-text-muted">{{ feature.desc }}</p>
@@ -235,7 +254,7 @@
             </div>
         </section>
 
-        <section id="testimonials" class="py-20" style="background: var(--home-bg);">
+    <section id="testimonials" class="py-20" style="background: #ffffff;">
             <div class="container">
                 <div class="flex flex-wrap items-center justify-between gap-6">
                     <div>
@@ -254,7 +273,7 @@
                         {name: 'نورة الغامدي', role: 'مديرة تسويق', text: 'موشن جرافيك ومونتاج بجودة عالية ودعم سريع.'}
                     ] %}
                     {% for item in testimonials %}
-                        <div class="home-neu-card p-6">
+                        <div class="home-cta-card p-6">
                             <div class="flex items-center gap-4">
                                 <div class="h-12 w-12 rounded-full bg-gradient-to-br from-violet-500 to-blue-500"></div>
                                 <div>
@@ -270,7 +289,7 @@
             </div>
         </section>
 
-        <section id="pricing" class="py-20" style="background: var(--home-alt-bg);">
+    <section id="pricing" class="py-20" style="background: #ffffff;">
             <div class="container">
                 <div class="max-w-2xl">
                     <p class="text-sm font-semibold text-violet-600">الباقات</p>
@@ -284,7 +303,7 @@
                         {name: 'المؤسسات', price: '14,500', desc: 'حل بصري متكامل للعلامات الكبرى.', featured: false}
                     ] %}
                     {% for plan in plans %}
-                        <div class="relative home-neu-card p-6 transition hover:-translate-y-1 {% if plan.featured %}ring-2 ring-violet-300 shadow-[0_20px_50px_rgba(140,120,255,0.18)]{% endif %}">
+                        <div class="relative home-cta-card p-6 transition hover:-translate-y-1 {% if plan.featured %}ring-2 ring-violet-300 shadow-[0_20px_50px_rgba(140,120,255,0.18)]{% endif %}">
                             {% if plan.featured %}
                                 <span class="absolute -top-3 right-6 rounded-full bg-gradient-to-r from-violet-500 to-blue-500 px-4 py-1 text-xs font-semibold text-white">الأكثر طلباً</span>
                             {% endif %}
@@ -300,16 +319,16 @@
                                 <li>تسليم ملفات قابلة للتوسع</li>
                                 <li>دعم لمدة 30 يوم</li>
                             </ul>
-                            <a href="#" class="mt-8 inline-flex w-full justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">احجز الباقة</a>
+                            <a href="#" data-scroll-stop="true" class="mt-8 inline-flex w-full justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5">احجز الباقة</a>
                         </div>
                     {% endfor %}
                 </div>
             </div>
         </section>
 
-        <section id="cta" class="pb-24" style="background: var(--home-bg);">
+    <section id="cta" class="pb-24" style="background: #ffffff;">
             <div class="container">
-                <div class="relative overflow-hidden rounded-[32px] bg-white p-10 shadow-[20px_20px_40px_var(--home-shadow-dark),-20px_-20px_40px_var(--home-shadow-light)]">
+                <div class="relative overflow-hidden home-cta-card p-10">
                     <div class="absolute -top-16 left-10 h-40 w-40 rounded-full bg-violet-300/40 blur-3xl"></div>
                     <div class="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
                         <div>
@@ -317,7 +336,7 @@
                             <p class="mt-3 home-text-muted">دعنا نصنع حضوراً بصرياً يرسخ في ذهن عملائك.</p>
                         </div>
                         <div class="flex flex-wrap gap-4">
-                            <a href="#" class="rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300/40">ابدأ مشروعك</a>
+                            <a href="#" data-scroll-stop="true" class="rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300/40">ابدأ مشروعك</a>
                             <a href="#portfolio" class="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm">شاهد الأعمال</a>
                         </div>
                     </div>
