@@ -1,9 +1,9 @@
 {
     "name": {
-        "ar": "رائد",
+        "ar": "wrd-dev-03",
         "en": "Theme Raed"
     },
-    "repository": "https://github.com/SallaApp/theme-raed",
+    "repository": "https://github.com/aweed1496-max/wrd-dev-03",
     "author_email": "support@salla.sa",
     "features": [
         "mega-menu",
