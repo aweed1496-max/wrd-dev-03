@@ -15,13 +15,13 @@
                 <div class="grid items-center gap-14 lg:grid-cols-2">
                     <div>
                         <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur">
-                            وكالة تصميم رقمية فاخرة
+                            استوديو جرافيك وهويات بصرية
                         </span>
                         <h1 class="mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-                            تصميم يرفع مستوى علامتك الرقمية
+                            جرافيك يصنع حضورك البصري
                         </h1>
                         <p class="mt-5 max-w-xl text-lg text-white/75">
-                            نقدم حلول UI/UX، هوية بصرية، موشن جرافيك، وتصميم ثلاثي الأبعاد بأسلوب مستقبلي يليق بعالم SaaS و Web3.
+                            نقدم حلول هوية بصرية، جرافيك احترافي، موشن جرافيك، مونتاج، وتصميم ثلاثي الأبعاد بأسلوب عصري فاخر.
                         </p>
                         <div class="mt-8 flex flex-wrap gap-4">
                             <a href="#pricing" class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0b102b] shadow-lg shadow-white/20 transition hover:-translate-y-0.5">
@@ -50,8 +50,8 @@
                         <div class="absolute -top-10 right-10 h-64 w-64 rounded-full bg-gradient-to-br from-violet-500/50 via-purple-500/40 to-blue-500/20 blur-3xl"></div>
                         <div class="relative rounded-[32px] border border-white/20 bg-white/10 p-8 backdrop-blur-2xl shadow-[0_40px_80px_rgba(10,20,60,0.4)]">
                             <div class="flex items-center justify-between">
-                                <span class="text-sm text-white/60">لوحة تحكم ذكية</span>
-                                <span class="rounded-full bg-white/20 px-3 py-1 text-xs text-white/80">Web3 UI</span>
+                                <span class="text-sm text-white/60">لوحة عرض إبداعية</span>
+                                <span class="rounded-full bg-white/20 px-3 py-1 text-xs text-white/80">Graphic Studio</span>
                             </div>
                             <div class="mt-6 space-y-4">
                                 <div class="h-32 rounded-2xl bg-gradient-to-br from-white/25 via-white/10 to-transparent"></div>
@@ -63,8 +63,8 @@
                             <div class="mt-6 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4">
                                 <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-violet-500 to-blue-500"></div>
                                 <div>
-                                    <p class="text-sm font-semibold">تجربة مستقبلية</p>
-                                    <p class="text-xs text-white/60">واجهات ذكية قابلة للتوسع</p>
+                                    <p class="text-sm font-semibold">حضور بصري فاخر</p>
+                                    <p class="text-xs text-white/60">تصاميم ترفع قيمة العلامة</p>
                                 </div>
                             </div>
                         </div>
@@ -77,21 +77,31 @@
             <div class="container">
                 <div class="max-w-2xl">
                     <p class="text-sm font-semibold text-violet-300">خدماتنا</p>
-                    <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">حلول تصميم رقمية متكاملة</h2>
-                    <p class="mt-4 text-white/70">كل ما تحتاجه لبناء تجربة رقمية فاخرة ومؤثرة.</p>
+                    <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">حلول جرافيك وهوية متكاملة</h2>
+                    <p class="mt-4 text-white/70">كل ما تحتاجه لبناء حضور بصري فخم ومؤثر.</p>
                 </div>
                 <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {% set services = [
-                        {title: 'تصميم واجهات UI/UX', desc: 'واجهات حديثة تعتمد على تجارب المستخدم الذكية.'},
-                        {title: 'الهوية البصرية', desc: 'بناء علامة متكاملة تمتلك لغة بصرية واضحة.'},
-                        {title: 'موشن جرافيك', desc: 'حركات ترويجية تعكس قيمة منتجك بوضوح.'},
-                        {title: 'تصميم ثلاثي الأبعاد', desc: 'نماذج 3D واقعية لعرض المنتجات والخدمات.'}
+                        {title: 'خدمات تصميم العلامة', price: '100', desc: 'هوية بصرية متكاملة تشمل الشعار والألوان والتطبيقات.'},
+                        {title: 'تصميم جرافيك', desc: 'تصاميم احترافية للسوشيال والمطبوعات والإعلانات.'},
+                        {title: 'موشن جرافيك', desc: 'حركات ترويجية تعكس قيمة علامتك بوضوح.'},
+                        {title: 'دورة العرض الاحترافي', price: '255', desc: 'منتج رقمي احترافي لتطوير العروض التقديمية.'}
                     ] %}
                     {% for service in services %}
                         <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-violet-400/40 hover:shadow-[0_20px_40px_rgba(140,120,255,0.2)]">
                             <div class="mb-6 h-12 w-12 rounded-2xl bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500"></div>
                             <h3 class="text-lg font-semibold">{{ service.title }}</h3>
                             <p class="mt-3 text-sm text-white/70">{{ service.desc }}</p>
+                            {% if service.price %}
+                                <div class="mt-5 flex flex-wrap items-center gap-3">
+                                    <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-white/80">
+                                        {{ service.price }} ريال
+                                    </span>
+                                    <a href="#pricing" class="rounded-lg bg-white px-4 py-2 text-xs font-semibold text-[#0b102b] transition hover:-translate-y-0.5">
+                                        شراء الآن
+                                    </a>
+                                </div>
+                            {% endif %}
                         </div>
                     {% endfor %}
                 </div>
@@ -103,7 +113,7 @@
                 <div class="flex flex-wrap items-end justify-between gap-6">
                     <div>
                         <p class="text-sm font-semibold text-violet-300">الأعمال</p>
-                        <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">مختارات من مشاريعنا</h2>
+                        <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">مختارات من أعمال الجرافيك</h2>
                     </div>
                     <a href="#" class="rounded-xl border border-white/15 bg-white/5 px-5 py-2 text-sm font-semibold text-white/80 backdrop-blur transition hover:border-white/40">عرض الكل</a>
                 </div>
@@ -114,9 +124,9 @@
                                 <img class="h-52 w-full object-cover transition duration-500 group-hover:scale-105" src="{{ 'images/placeholder.png' | asset }}" alt="مشروع {{ item }}">
                             </div>
                             <div class="mt-5">
-                                <span class="text-xs font-semibold text-violet-300">واجهة رقمية</span>
-                                <h3 class="mt-2 text-lg font-semibold">منصة SaaS متقدمة</h3>
-                                <p class="mt-2 text-sm text-white/70">تجربة مستخدم سلسة مع واجهات غنية بالبيانات.</p>
+                                <span class="text-xs font-semibold text-violet-300">خدمات تصميم العلامة</span>
+                                <h3 class="mt-2 text-lg font-semibold">هوية بصرية فاخرة</h3>
+                                <p class="mt-2 text-sm text-white/70">شعار، ألوان، خطوط، وتطبيقات بصرية متناغمة.</p>
                             </div>
                         </article>
                     {% endfor %}
@@ -133,11 +143,11 @@
                 <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {% set features = [
                         {title: 'سرعة التنفيذ', desc: 'تسليم سريع مع التزام كامل بالمواعيد.'},
-                        {title: 'جودة عالية', desc: 'تصاميم دقيقة تعتمد على أفضل الممارسات.'},
-                        {title: 'خبرة Web3', desc: 'معرفة متقدمة بتجارب Web3 الحديثة.'},
-                        {title: 'دعم مستمر', desc: 'فريق متابعة طوال الرحلة الرقمية.'},
-                        {title: 'رؤية استراتيجية', desc: 'تصميم قائم على أهداف الأعمال.'},
-                        {title: 'تجربة مميزة', desc: 'نهتم بأدق تفاصيل تجربة العميل.'}
+                        {title: 'جودة عالية', desc: 'تفاصيل دقيقة وإخراج فخم للتصاميم.'},
+                        {title: 'إبداع بصري', desc: 'أفكار مبتكرة تعكس هوية العلامة.'},
+                        {title: 'دعم مستمر', desc: 'متابعة مستمرة حتى بعد التسليم.'},
+                        {title: 'اتساق الهوية', desc: 'لغة بصرية موحدة في كل نقطة تواصل.'},
+                        {title: 'نتائج مؤثرة', desc: 'تصاميم ترفع الانطباع وتزيد التفاعل.'}
                     ] %}
                     {% for feature in features %}
                         <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-violet-400/40">
@@ -164,9 +174,9 @@
                 </div>
                 <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {% set testimonials = [
-                        {name: 'سارة العتيبي', role: 'مديرة علامة تجارية', text: 'تجربة فاخرة واحترافية، كل التفاصيل كانت دقيقة.'},
-                        {name: 'عبدالله الزهراني', role: 'مؤسس منصة تقنية', text: 'أفضل فريق تعاملنا معه لتصميم واجهات SaaS.'},
-                        {name: 'نورة الغامدي', role: 'مديرة تسويق', text: 'تصاميم مبهرة مع دعم سريع وفعّال.'}
+                        {name: 'سارة العتيبي', role: 'مديرة علامة تجارية', text: 'هوية بصرية متكاملة رفعت من حضور العلامة.'},
+                        {name: 'عبدالله الزهراني', role: 'مالك متجر', text: 'تصاميم جرافيك احترافية للسوشيال والمطبوعات.'},
+                        {name: 'نورة الغامدي', role: 'مديرة تسويق', text: 'موشن جرافيك ومونتاج بجودة عالية ودعم سريع.'}
                     ] %}
                     {% for item in testimonials %}
                         <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
@@ -189,14 +199,14 @@
             <div class="container">
                 <div class="max-w-2xl">
                     <p class="text-sm font-semibold text-violet-300">الباقات</p>
-                    <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">خطط مصممة لكل مراحل النمو</h2>
-                    <p class="mt-4 text-white/70">اختر الباقة المناسبة لطموحك وابدأ التميز.</p>
+                    <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">باقات جرافيك تناسب احتياجك</h2>
+                    <p class="mt-4 text-white/70">اختر الباقة المناسبة لهويتك ومحتواك البصري.</p>
                 </div>
                 <div class="mt-10 grid gap-6 lg:grid-cols-3">
                     {% set plans = [
-                        {name: 'الأساسية', price: '2,900', desc: 'مثالية للبدايات الذكية.', featured: false},
-                        {name: 'الاحترافية', price: '7,500', desc: 'حل متكامل للتوسع السريع.', featured: true},
-                        {name: 'المؤسسات', price: '14,500', desc: 'أفضل اختيار للعلامات الكبرى.', featured: false}
+                        {name: 'الأساسية', price: '2,900', desc: 'مثالية للهوية والمحتوى الأساسي.', featured: false},
+                        {name: 'الاحترافية', price: '7,500', desc: 'حزمة جرافيك شاملة مع موشن.', featured: true},
+                        {name: 'المؤسسات', price: '14,500', desc: 'حل بصري متكامل للعلامات الكبرى.', featured: false}
                     ] %}
                     {% for plan in plans %}
                         <div class="relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 {% if plan.featured %}ring-2 ring-violet-400/60 shadow-[0_20px_50px_rgba(140,120,255,0.25)]{% endif %}">
@@ -211,7 +221,7 @@
                             </div>
                             <ul class="mt-6 space-y-3 text-sm text-white/70">
                                 <li>جلسات استراتيجية</li>
-                                <li>تصميم واجهات أساسية</li>
+                                <li>تصاميم سوشيال ومطبوعات</li>
                                 <li>تسليم ملفات قابلة للتوسع</li>
                                 <li>دعم لمدة 30 يوم</li>
                             </ul>
@@ -228,8 +238,8 @@
                     <div class="absolute -top-16 left-10 h-40 w-40 rounded-full bg-violet-500/30 blur-3xl"></div>
                     <div class="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
                         <div>
-                            <h3 class="text-3xl font-semibold">جاهز لتجربة رقمية استثنائية؟</h3>
-                            <p class="mt-3 text-white/70">دعنا نبني معك تجربة مستقبلية تُبهر عملاءك.</p>
+                            <h3 class="text-3xl font-semibold">جاهز لرفع مستوى الهوية البصرية؟</h3>
+                            <p class="mt-3 text-white/70">دعنا نصنع حضوراً بصرياً يرسخ في ذهن عملائك.</p>
                         </div>
                         <div class="flex flex-wrap gap-4">
                             <a href="#" class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0b102b] shadow-lg shadow-white/20">ابدأ مشروعك</a>
