@@ -130,6 +130,404 @@
         },
         {
             "type": "static",
+            "format": "title",
+            "id": "static-custom-home",
+            "value": "<div class='rounded-lg' style='background-color: #21636d; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'> خيارات الصفحة الرئيسية المخصصة</h6></div>",
+            "variant": "h6"
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تفعيل قائمة رئيسية مخصصة",
+            "description": "عند التفعيل سيتم استخدام الروابط أدناه بدلاً من التصنيفات",
+            "id": "enable_custom_main_menu",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "لون خلفية الصفحة الرئيسية",
+            "id": "home_bg_color",
+            "value": "#f7f5f0",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #f7f5f0"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "لون خلفية الأقسام البديلة",
+            "id": "home_alt_bg_color",
+            "value": "#faf8f3",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #faf8f3"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "لون النص الأساسي",
+            "id": "home_text_color",
+            "value": "#0f172a",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #0f172a"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "لون النص الثانوي",
+            "id": "home_muted_text_color",
+            "value": "#64748b",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #64748b"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "لون خلفية البطاقات",
+            "id": "home_card_bg_color",
+            "value": "#f3f1ec",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #f3f1ec"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "لون نص البطاقات",
+            "id": "home_card_text_color",
+            "value": "#0f172a",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #0f172a"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "ظل البطاقة الداكن",
+            "id": "home_shadow_dark",
+            "value": "#d9d6cf",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #d9d6cf"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "ظل البطاقة الفاتح",
+            "id": "home_shadow_light",
+            "value": "#ffffff",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #ffffff"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "لون خلفية القائمة الرئيسية",
+            "id": "menu_bg_color",
+            "value": "#f7f5f0",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #f7f5f0"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "لون نص القائمة الرئيسية",
+            "id": "menu_text_color",
+            "value": "#0f172a",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #0f172a"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "ظل القائمة الداكن",
+            "id": "menu_shadow_dark",
+            "value": "#d9d6cf",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #d9d6cf"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-paint",
+            "label": "ظل القائمة الفاتح",
+            "id": "menu_shadow_light",
+            "value": "#ffffff",
+            "required": false,
+            "format": "text",
+            "description": "مثال: #ffffff"
+        },
+        {
+            "id": "custom_main_menu",
+            "type": "collection",
+            "format": "collection",
+            "label": "روابط القائمة الرئيسية المخصصة",
+            "description": "روابط تظهر في القائمة الرئيسية أعلى المتجر",
+            "item_label": "رابط",
+            "icon": "sicon-list-add",
+            "value": [
+                {
+                    "menu.title": "الرئيسية",
+                    "menu.url": "/"
+                },
+                {
+                    "menu.title": "خدمات تصميم العلامة",
+                    "menu.url": "#service-branding"
+                },
+                {
+                    "menu.title": "تصميم جرافيك",
+                    "menu.url": "#service-graphic"
+                },
+                {
+                    "menu.title": "موشن جرافيك",
+                    "menu.url": "#service-motion"
+                },
+                {
+                    "menu.title": "دورة العرض الاحترافي",
+                    "menu.url": "#service-pitch"
+                }
+            ],
+            "fields": [
+                {
+                    "id": "menu.title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان الرابط",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "required": false,
+                    "minLength": 2,
+                    "maxLength": 80
+                },
+                {
+                    "id": "menu.url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "الرابط",
+                    "description": "يمكنك إدخال رابط كامل أو معرف قسم مثل #service-branding",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false
+                }
+            ],
+            "required": false
+        },
+        {
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "label": "تفعيل شريط الشعارات المتحرك",
+            "description": null,
+            "id": "enable_logo_ticker",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "type": "string",
+            "icon": "sicon-format-text-alt",
+            "label": "عنوان شريط الشعارات",
+            "multilanguage": true,
+            "id": "logo_ticker_title",
+            "value": "شعارات صممناها بعناية",
+            "required": false,
+            "format": "text",
+            "description": null,
+            "placeholder": "عنوان الشريط",
+            "minLength": 0,
+            "maxLength": 80
+        },
+        {
+            "type": "string",
+            "icon": "sicon-typography",
+            "label": "وصف شريط الشعارات",
+            "multilanguage": true,
+            "id": "logo_ticker_description",
+            "value": "شريط متحرك يعرض أبرز الهويات البصرية التي نفذناها.",
+            "description": null,
+            "format": "textarea",
+            "required": false,
+            "placeholder": "وصف الشريط",
+            "minLength": 0,
+            "maxLength": 160
+        },
+        {
+            "type": "string",
+            "icon": "sicon-format-text-alt",
+            "label": "عنوان قسم الأعمال",
+            "multilanguage": true,
+            "id": "portfolio_section_title",
+            "value": "مختارات من أعمال الجرافيك",
+            "required": false,
+            "format": "text",
+            "description": null,
+            "placeholder": "عنوان قسم الأعمال",
+            "minLength": 0,
+            "maxLength": 80
+        },
+        {
+            "type": "string",
+            "icon": "sicon-typography",
+            "label": "وصف قسم الأعمال",
+            "multilanguage": true,
+            "id": "portfolio_section_description",
+            "value": "مختارات من الهويات البصرية والتصاميم التي نفذناها.",
+            "description": null,
+            "format": "textarea",
+            "required": false,
+            "placeholder": "وصف قصير للقسم",
+            "minLength": 0,
+            "maxLength": 160
+        },
+        {
+            "id": "portfolio_items",
+            "type": "collection",
+            "format": "collection",
+            "label": "عناصر الأعمال",
+            "description": "يمكنك إضافة أعمال/مشاريع مع صورة ونبذة مختصرة",
+            "item_label": "عمل",
+            "icon": "sicon-list-add",
+            "value": [
+                {
+                    "portfolio.category": "خدمات تصميم العلامة",
+                    "portfolio.title": "هوية بصرية فاخرة",
+                    "portfolio.description": "شعار، ألوان، خطوط، وتطبيقات بصرية متناغمة.",
+                    "portfolio.image": "",
+                    "portfolio.url": ""
+                },
+                {
+                    "portfolio.category": "تصميم جرافيك",
+                    "portfolio.title": "حملة سوشيال متكاملة",
+                    "portfolio.description": "تصاميم متناسقة تعكس شخصية العلامة.",
+                    "portfolio.image": "",
+                    "portfolio.url": ""
+                }
+            ],
+            "fields": [
+                {
+                    "id": "portfolio.category",
+                    "type": "string",
+                    "format": "text",
+                    "label": "التصنيف",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "portfolio.title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان العمل",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "portfolio.description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف",
+                    "icon": "sicon-typography",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "portfolio.image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة العمل",
+                    "description": "يفضل مقاس 800×600",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "portfolio.url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط العمل (اختياري)",
+                    "description": null,
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "logo_ticker_items",
+            "type": "collection",
+            "format": "collection",
+            "label": "شعارات الشريط المتحرك",
+            "description": "أضف شعارات أو أسماء العلامات التي تم تنفيذها",
+            "item_label": "شعار",
+            "icon": "sicon-list-add",
+            "value": [
+                {
+                    "logo.name": "أريج",
+                    "logo.image": "",
+                    "logo.url": ""
+                },
+                {
+                    "logo.name": "لمعة",
+                    "logo.image": "",
+                    "logo.url": ""
+                },
+                {
+                    "logo.name": "سُكرة",
+                    "logo.image": "",
+                    "logo.url": ""
+                },
+                {
+                    "logo.name": "مِداد",
+                    "logo.image": "",
+                    "logo.url": ""
+                }
+            ],
+            "fields": [
+                {
+                    "id": "logo.name",
+                    "type": "string",
+                    "format": "text",
+                    "label": "اسم الشعار",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "logo.image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة الشعار",
+                    "description": "يفضل شعار شفاف بخلفية PNG",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "logo.url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط (اختياري)",
+                    "description": null,
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false
+                }
+            ],
+            "required": false
+        },
+        {
+            "type": "static",
             "id": "static-line3",
             "format": "line"
         },

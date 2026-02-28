@@ -9,6 +9,34 @@ class NavigationMenu extends HTMLElement {
                 this.visibleMenus = [];
                 this.overflowMenus = [];
 
+                const customMenu = window.custom_main_menu;
+                const customMenuEnabled = window.enable_custom_main_menu !== 'false' && window.enable_custom_main_menu !== false;
+                const resolveValue = (item, keys) => keys.find((key) => item?.[key]) ? item[keys.find((key) => item?.[key])] : '';
+
+                if (customMenuEnabled && Array.isArray(customMenu) && customMenu.length) {
+                    this.menus = customMenu.map((item) => {
+                        const title = resolveValue(item, ['menu.title', 'title', 'name', 'items.title']);
+                        let url = resolveValue(item, ['menu.url', 'url', 'items.url']);
+                        if (url && url.startsWith('#') && window.store_url) {
+                            url = `${window.store_url}${url}`;
+                        }
+
+                        return {
+                            title,
+                            url,
+                            image: item.image || item['menu.image'] || null,
+                            children: [],
+                            products: [],
+                            attrs: '',
+                            link_attrs: ''
+                        };
+                    }).filter((item) => item.title);
+
+                    return this.render().then(() => {
+                        this.initializeResponsiveMenu();
+                    });
+                }
+
                 return salla.api.component.getMenus()
                 .then(({ data }) => {
                     this.menus = data;

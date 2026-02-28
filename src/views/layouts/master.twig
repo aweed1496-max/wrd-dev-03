@@ -67,12 +67,34 @@
     {% block head_scripts %}{% endblock %}
 
 
+    {% set custom_menu_items = theme.settings.get('custom_main_menu', []) %}
+    {% if custom_menu_items is empty %}
+        {% set custom_menu_items = [
+            {'menu.title': 'الرئيسية', 'menu.url': '/'},
+            {'menu.title': 'خدمات تصميم العلامة', 'menu.url': '#service-branding'},
+            {'menu.title': 'تصميم جرافيك', 'menu.url': '#service-graphic'},
+            {'menu.title': 'موشن جرافيك', 'menu.url': '#service-motion'},
+            {'menu.title': 'دورة العرض الاحترافي', 'menu.url': '#service-pitch'}
+        ] %}
+    {% endif %}
+    <script type="application/json" id="custom-main-menu-data">
+        {{ custom_menu_items | json_encode | raw }}
+    </script>
+    <script type="application/json" id="can-access-wallet-data">
+        {{ user.can_access_wallet | json_encode }}
+    </script>
+
     <script data-cfasync="false">
         window.header_is_sticky = "{{theme.settings.get('header_is_sticky', 'Default Value')}}"
         window.imageZoom = "{{theme.settings.get('imageZoom')}}"
-        window.can_access_wallet = {{ user.can_access_wallet | json_encode }}
+        const canAccessWalletData = document.getElementById('can-access-wallet-data');
+        window.can_access_wallet = canAccessWalletData ? JSON.parse(canAccessWalletData.textContent || 'false') : false;
+        window.store_url = "{{ store.url }}"
         window.enable_more_menu = "{{ theme.settings.get('enable_more_menu', true) }}"
         window.enable_add_product_toast = "{{ theme.settings.get('enable_add_product_toast', true) }}"
+        window.enable_custom_main_menu = "{{ theme.settings.get('enable_custom_main_menu', true) }}"
+        const customMainMenuData = document.getElementById('custom-main-menu-data');
+        window.custom_main_menu = customMainMenuData ? JSON.parse(customMainMenuData.textContent || '[]') : [];
     </script>
     
     {% hook 'head:start' %}
@@ -89,6 +111,61 @@
             --color-primary-dark: {{ theme.color.darker(0.15) }};
             --color-primary-light: {{ theme.color.lighter(0.15) }};
             --color-primary-reverse: {{ theme.color.reverse_text }};
+            --home-bg: {{ theme.settings.get('home_bg_color', '#f7f5f0') }};
+            --home-alt-bg: {{ theme.settings.get('home_alt_bg_color', '#faf8f3') }};
+            --home-text: {{ theme.settings.get('home_text_color', '#0f172a') }};
+            --home-muted: {{ theme.settings.get('home_muted_text_color', '#64748b') }};
+            --home-card-bg: {{ theme.settings.get('home_card_bg_color', '#f3f1ec') }};
+            --home-card-text: {{ theme.settings.get('home_card_text_color', '#0f172a') }};
+            --home-shadow-dark: {{ theme.settings.get('home_shadow_dark', '#d9d6cf') }};
+            --home-shadow-light: {{ theme.settings.get('home_shadow_light', '#ffffff') }};
+            --menu-bg: {{ theme.settings.get('menu_bg_color', '#f7f5f0') }};
+            --menu-text: {{ theme.settings.get('menu_text_color', '#0f172a') }};
+            --menu-shadow-dark: {{ theme.settings.get('menu_shadow_dark', '#d9d6cf') }};
+            --menu-shadow-light: {{ theme.settings.get('menu_shadow_light', '#ffffff') }};
+        }
+
+        .home-theme {
+            background-color: var(--home-bg);
+            color: var(--home-text);
+        }
+
+        .home-theme .home-text-muted,
+        .home-theme .text-slate-600,
+        .home-theme .text-slate-500 {
+            color: var(--home-muted) !important;
+        }
+
+        .home-theme .text-slate-700,
+        .home-theme .text-slate-800,
+        .home-theme .text-slate-900 {
+            color: var(--home-text) !important;
+        }
+
+        .home-neu-card {
+            background: var(--home-card-bg);
+            color: var(--home-card-text);
+            box-shadow: 10px 10px 24px var(--home-shadow-dark), -10px -10px 24px var(--home-shadow-light);
+            border-radius: 24px;
+        }
+
+        .main-nav-container {
+            background: var(--menu-bg) !important;
+            box-shadow: 10px 10px 24px var(--menu-shadow-dark), -10px -10px 24px var(--menu-shadow-light);
+        }
+
+        .main-nav-container .main-menu > li > a {
+            color: var(--menu-text) !important;
+            background: var(--menu-bg);
+            border-radius: 999px;
+            padding: 0.45rem 1rem;
+            box-shadow: 6px 6px 12px var(--menu-shadow-dark), -6px -6px 12px var(--menu-shadow-light);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .main-nav-container .main-menu > li > a:hover {
+            transform: translateY(-1px);
+            box-shadow: 4px 4px 10px var(--menu-shadow-dark), -4px -4px 10px var(--menu-shadow-light);
         }
     </style>
     {# tracking services, custom css feature. #}
