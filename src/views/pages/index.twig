@@ -7,7 +7,239 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    {% component home %}
+    <div class="bg-[#080b1f] text-white">
+        <section class="relative overflow-hidden bg-gradient-to-b from-[#11163a] via-[#0b102b] to-[#080b1f]">
+            <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-violet-500/40 via-purple-500/30 to-blue-500/10 blur-[140px]"></div>
+            <div class="absolute bottom-0 -left-32 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-blue-500/30 via-cyan-400/20 to-transparent blur-[160px]"></div>
+            <div class="container relative z-10 py-20 lg:py-28">
+                <div class="grid items-center gap-14 lg:grid-cols-2">
+                    <div>
+                        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur">
+                            وكالة تصميم رقمية فاخرة
+                        </span>
+                        <h1 class="mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+                            تصميم يرفع مستوى علامتك الرقمية
+                        </h1>
+                        <p class="mt-5 max-w-xl text-lg text-white/75">
+                            نقدم حلول UI/UX، هوية بصرية، موشن جرافيك، وتصميم ثلاثي الأبعاد بأسلوب مستقبلي يليق بعالم SaaS و Web3.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="#pricing" class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0b102b] shadow-lg shadow-white/20 transition hover:-translate-y-0.5">
+                                ابدأ الآن
+                            </a>
+                            <a href="#services" class="rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:border-white/40">
+                                استعرض الخدمات
+                            </a>
+                        </div>
+                        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+                            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+                                <p class="text-2xl font-semibold">+50K</p>
+                                <p class="text-sm text-white/60">عميل عالمي</p>
+                            </div>
+                            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+                                <p class="text-2xl font-semibold">+12K</p>
+                                <p class="text-sm text-white/60">مشروع ناجح</p>
+                            </div>
+                            <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+                                <p class="text-2xl font-semibold">24/7</p>
+                                <p class="text-sm text-white/60">دعم احترافي</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -top-10 right-10 h-64 w-64 rounded-full bg-gradient-to-br from-violet-500/50 via-purple-500/40 to-blue-500/20 blur-3xl"></div>
+                        <div class="relative rounded-[32px] border border-white/20 bg-white/10 p-8 backdrop-blur-2xl shadow-[0_40px_80px_rgba(10,20,60,0.4)]">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-white/60">لوحة تحكم ذكية</span>
+                                <span class="rounded-full bg-white/20 px-3 py-1 text-xs text-white/80">Web3 UI</span>
+                            </div>
+                            <div class="mt-6 space-y-4">
+                                <div class="h-32 rounded-2xl bg-gradient-to-br from-white/25 via-white/10 to-transparent"></div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="h-20 rounded-2xl bg-white/10"></div>
+                                    <div class="h-20 rounded-2xl bg-white/10"></div>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+                                <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-violet-500 to-blue-500"></div>
+                                <div>
+                                    <p class="text-sm font-semibold">تجربة مستقبلية</p>
+                                    <p class="text-xs text-white/60">واجهات ذكية قابلة للتوسع</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="bg-gradient-to-b from-[#0b102b] via-[#0a0f25] to-[#080b1f] py-20">
+            <div class="container">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-semibold text-violet-300">خدماتنا</p>
+                    <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">حلول تصميم رقمية متكاملة</h2>
+                    <p class="mt-4 text-white/70">كل ما تحتاجه لبناء تجربة رقمية فاخرة ومؤثرة.</p>
+                </div>
+                <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {% set services = [
+                        {title: 'تصميم واجهات UI/UX', desc: 'واجهات حديثة تعتمد على تجارب المستخدم الذكية.'},
+                        {title: 'الهوية البصرية', desc: 'بناء علامة متكاملة تمتلك لغة بصرية واضحة.'},
+                        {title: 'موشن جرافيك', desc: 'حركات ترويجية تعكس قيمة منتجك بوضوح.'},
+                        {title: 'تصميم ثلاثي الأبعاد', desc: 'نماذج 3D واقعية لعرض المنتجات والخدمات.'}
+                    ] %}
+                    {% for service in services %}
+                        <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-violet-400/40 hover:shadow-[0_20px_40px_rgba(140,120,255,0.2)]">
+                            <div class="mb-6 h-12 w-12 rounded-2xl bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500"></div>
+                            <h3 class="text-lg font-semibold">{{ service.title }}</h3>
+                            <p class="mt-3 text-sm text-white/70">{{ service.desc }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="bg-[#080b1f] py-20">
+            <div class="container">
+                <div class="flex flex-wrap items-end justify-between gap-6">
+                    <div>
+                        <p class="text-sm font-semibold text-violet-300">الأعمال</p>
+                        <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">مختارات من مشاريعنا</h2>
+                    </div>
+                    <a href="#" class="rounded-xl border border-white/15 bg-white/5 px-5 py-2 text-sm font-semibold text-white/80 backdrop-blur transition hover:border-white/40">عرض الكل</a>
+                </div>
+                <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {% for item in 1..6 %}
+                        <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-white/30">
+                            <div class="overflow-hidden rounded-2xl">
+                                <img class="h-52 w-full object-cover transition duration-500 group-hover:scale-105" src="{{ 'images/placeholder.png' | asset }}" alt="مشروع {{ item }}">
+                            </div>
+                            <div class="mt-5">
+                                <span class="text-xs font-semibold text-violet-300">واجهة رقمية</span>
+                                <h3 class="mt-2 text-lg font-semibold">منصة SaaS متقدمة</h3>
+                                <p class="mt-2 text-sm text-white/70">تجربة مستخدم سلسة مع واجهات غنية بالبيانات.</p>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="bg-gradient-to-b from-[#0a0f25] via-[#0b102b] to-[#080b1f] py-20">
+            <div class="container">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-semibold text-violet-300">المميزات</p>
+                    <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">لماذا تختار فريقنا؟</h2>
+                </div>
+                <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {% set features = [
+                        {title: 'سرعة التنفيذ', desc: 'تسليم سريع مع التزام كامل بالمواعيد.'},
+                        {title: 'جودة عالية', desc: 'تصاميم دقيقة تعتمد على أفضل الممارسات.'},
+                        {title: 'خبرة Web3', desc: 'معرفة متقدمة بتجارب Web3 الحديثة.'},
+                        {title: 'دعم مستمر', desc: 'فريق متابعة طوال الرحلة الرقمية.'},
+                        {title: 'رؤية استراتيجية', desc: 'تصميم قائم على أهداف الأعمال.'},
+                        {title: 'تجربة مميزة', desc: 'نهتم بأدق تفاصيل تجربة العميل.'}
+                    ] %}
+                    {% for feature in features %}
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-violet-400/40">
+                            <div class="mb-4 h-10 w-10 rounded-xl bg-gradient-to-br from-violet-500 to-blue-500"></div>
+                            <h3 class="text-lg font-semibold">{{ feature.title }}</h3>
+                            <p class="mt-3 text-sm text-white/70">{{ feature.desc }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="bg-[#080b1f] py-20">
+            <div class="container">
+                <div class="flex flex-wrap items-center justify-between gap-6">
+                    <div>
+                        <p class="text-sm font-semibold text-violet-300">آراء العملاء</p>
+                        <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">ثقة العملاء هي قوتنا</h2>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-white/70">
+                        <span class="h-2 w-2 rounded-full bg-violet-400"></span>
+                        تقييم 4.9 من 5
+                    </div>
+                </div>
+                <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {% set testimonials = [
+                        {name: 'سارة العتيبي', role: 'مديرة علامة تجارية', text: 'تجربة فاخرة واحترافية، كل التفاصيل كانت دقيقة.'},
+                        {name: 'عبدالله الزهراني', role: 'مؤسس منصة تقنية', text: 'أفضل فريق تعاملنا معه لتصميم واجهات SaaS.'},
+                        {name: 'نورة الغامدي', role: 'مديرة تسويق', text: 'تصاميم مبهرة مع دعم سريع وفعّال.'}
+                    ] %}
+                    {% for item in testimonials %}
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 rounded-full bg-gradient-to-br from-violet-500 to-blue-500"></div>
+                                <div>
+                                    <p class="text-base font-semibold">{{ item.name }}</p>
+                                    <p class="text-xs text-white/60">{{ item.role }}</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-sm text-white/70">"{{ item.text }}"</p>
+                            <div class="mt-4 text-sm text-violet-300">★★★★★</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="bg-gradient-to-b from-[#0b102b] via-[#0a0f25] to-[#080b1f] py-20">
+            <div class="container">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-semibold text-violet-300">الباقات</p>
+                    <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">خطط مصممة لكل مراحل النمو</h2>
+                    <p class="mt-4 text-white/70">اختر الباقة المناسبة لطموحك وابدأ التميز.</p>
+                </div>
+                <div class="mt-10 grid gap-6 lg:grid-cols-3">
+                    {% set plans = [
+                        {name: 'الأساسية', price: '2,900', desc: 'مثالية للبدايات الذكية.', featured: false},
+                        {name: 'الاحترافية', price: '7,500', desc: 'حل متكامل للتوسع السريع.', featured: true},
+                        {name: 'المؤسسات', price: '14,500', desc: 'أفضل اختيار للعلامات الكبرى.', featured: false}
+                    ] %}
+                    {% for plan in plans %}
+                        <div class="relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 {% if plan.featured %}ring-2 ring-violet-400/60 shadow-[0_20px_50px_rgba(140,120,255,0.25)]{% endif %}">
+                            {% if plan.featured %}
+                                <span class="absolute -top-3 right-6 rounded-full bg-gradient-to-r from-violet-500 to-blue-500 px-4 py-1 text-xs font-semibold">الأكثر طلباً</span>
+                            {% endif %}
+                            <h3 class="text-xl font-semibold">{{ plan.name }}</h3>
+                            <p class="mt-2 text-sm text-white/70">{{ plan.desc }}</p>
+                            <div class="mt-6 flex items-end gap-2">
+                                <span class="text-3xl font-semibold">{{ plan.price }}</span>
+                                <span class="text-sm text-white/60">ريال</span>
+                            </div>
+                            <ul class="mt-6 space-y-3 text-sm text-white/70">
+                                <li>جلسات استراتيجية</li>
+                                <li>تصميم واجهات أساسية</li>
+                                <li>تسليم ملفات قابلة للتوسع</li>
+                                <li>دعم لمدة 30 يوم</li>
+                            </ul>
+                            <a href="#" class="mt-8 inline-flex w-full justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#0b102b] transition hover:-translate-y-0.5">احجز الباقة</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="bg-[#080b1f] pb-24">
+            <div class="container">
+                <div class="relative overflow-hidden rounded-[32px] border border-white/15 bg-gradient-to-r from-violet-500/20 via-purple-500/10 to-blue-500/20 p-10 backdrop-blur">
+                    <div class="absolute -top-16 left-10 h-40 w-40 rounded-full bg-violet-500/30 blur-3xl"></div>
+                    <div class="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+                        <div>
+                            <h3 class="text-3xl font-semibold">جاهز لتجربة رقمية استثنائية؟</h3>
+                            <p class="mt-3 text-white/70">دعنا نبني معك تجربة مستقبلية تُبهر عملاءك.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#" class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0b102b] shadow-lg shadow-white/20">ابدأ مشروعك</a>
+                            <a href="#portfolio" class="rounded-xl border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white/90 backdrop-blur">شاهد الأعمال</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 {% endblock %}
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
