@@ -939,11 +939,17 @@ input:where([type='file']):focus {
 .bottom-2 {
     bottom: 0.5rem;
 }
+.bottom-6 {
+    bottom: 1.5rem;
+}
 .left-0 {
     left: 0px;
 }
 .left-10 {
     left: 2.5rem;
+}
+.left-6 {
+    left: 1.5rem;
 }
 .right-0 {
     right: 0px;
@@ -980,6 +986,9 @@ input:where([type='file']):focus {
 }
 .-z-1 {
     z-index: -1;
+}
+.z-0 {
+    z-index: 0;
 }
 .z-10 {
     z-index: 10;
@@ -1730,6 +1739,11 @@ input:where([type='file']):focus {
 .border-transparent {
     border-color: transparent;
 }
+.bg-\[\#25D366\] {
+    --tw-bg-opacity: 1;
+    background-color: rgba(37, 211, 102, 1);
+    background-color: rgba(37, 211, 102, var(--tw-bg-opacity, 1));
+}
 .bg-black {
     --tw-bg-opacity: 1;
     background-color: rgba(0, 0, 0, 1);
@@ -1956,6 +1970,10 @@ input:where([type='file']):focus {
 .py-1\.5 {
     padding-top: 0.375rem;
     padding-bottom: 0.375rem;
+}
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 .py-2 {
     padding-top: 0.5rem;
@@ -2300,6 +2318,9 @@ input:where([type='file']):focus {
 }
 .opacity-100 {
     opacity: 1;
+}
+.opacity-30 {
+    opacity: 0.3;
 }
 .opacity-40 {
     opacity: 0.4;

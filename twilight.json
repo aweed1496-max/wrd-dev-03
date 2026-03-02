@@ -322,6 +322,63 @@
             "required": false
         },
         {
+            "type": "static",
+            "format": "title",
+            "id": "static-home-poster",
+            "value": "<div class='rounded-lg' style='background-color: #0f172a; display: flex; justify-content: center; align-items: center;padding: 15px;margin-bottom: 20px !important; flex-direction: column;gap: 15px;'><h6 style='color: #ffffff;font-size: 15px; font-weight: bold;'>بوستر وخيارات التفاعل للصفحة الرئيسية</h6></div>",
+            "variant": "h6"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-image",
+            "label": "صورة البوستر",
+            "id": "home_poster_image",
+            "value": "",
+            "required": false,
+            "format": "image",
+            "description": "ارفع البوستر المطلوب عرضه في نهاية الصفحة الرئيسية"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-link",
+            "label": "ملف PDF لخلفية الخدمات",
+            "id": "home_services_pdf",
+            "value": "",
+            "required": false,
+            "format": "text",
+            "description": "ارفع ملف PDF من مدير الملفات ثم ضع رابطه هنا ليظهر بالخلفية"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-format-text-alt",
+            "label": "رقم واتساب للتواصل",
+            "id": "home_whatsapp_number",
+            "value": "",
+            "required": false,
+            "format": "text",
+            "description": "مثال: 9665XXXXXXXX بدون مسافات"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-typography",
+            "label": "نص الرسالة الافتراضية",
+            "id": "home_whatsapp_message",
+            "value": "مرحبا، أود طلب الخدمة",
+            "required": false,
+            "format": "textarea",
+            "description": "يتم إرساله تلقائيا عند فتح واتساب"
+        },
+        {
+            "type": "string",
+            "icon": "sicon-format-text-alt",
+            "label": "نص زر الطلب",
+            "id": "home_whatsapp_label",
+            "value": "اطلب الآن",
+            "required": false,
+            "format": "text",
+            "description": null
+        },
+        {
             "type": "boolean",
             "icon": "sicon-toggle-off",
             "label": "تفعيل شريط الشعارات المتحرك",

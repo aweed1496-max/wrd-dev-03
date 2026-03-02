@@ -7,8 +7,19 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
+    {% set home_poster_image = theme.settings.get('home_poster_image', '') %}
+    {% set home_services_pdf = theme.settings.get('home_services_pdf', '') %}
+    {% set whatsapp_number_raw = theme.settings.get('home_whatsapp_number', '') %}
+    {% set whatsapp_message = theme.settings.get('home_whatsapp_message', 'مرحبا، أود طلب الخدمة') %}
+    {% set whatsapp_label = theme.settings.get('home_whatsapp_label', 'اطلب الآن') %}
+    {% set whatsapp_number = whatsapp_number_raw|replace({'+': '', ' ': '', '-': '', '(': '', ')': ''}) %}
     <div class="home-theme" style="background: #ffffff;">
         <section class="relative overflow-hidden" style="background: #ffffff;">
+            {% if home_services_pdf %}
+                <div class="pointer-events-none absolute inset-0 z-0 opacity-30">
+                    <iframe src="{{ home_services_pdf | asset }}" title="ملف الخدمات" class="h-full w-full" style="border: 0;" loading="lazy" aria-hidden="true"></iframe>
+                </div>
+            {% endif %}
             <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-violet-300/40 via-purple-200/40 to-blue-200/10 blur-[140px]"></div>
             <div class="absolute bottom-0 -left-32 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-blue-200/30 via-cyan-200/20 to-transparent blur-[160px]"></div>
             <div class="container relative z-10 py-20 lg:py-28">
@@ -206,11 +217,6 @@
                         </article>
                     {% endfor %}
                 </div>
-                {% set whatsapp_number = store.contacts.whatsapp|default('') %}
-                {% set whatsapp_link = whatsapp_number ? whatsapp_number : '966500000000' %}
-                <div class="mt-8 flex justify-center">
-                    <a href="https://wa.me/{{ whatsapp_link }}" data-scroll-stop="true" class="rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5">اطلب الآن</a>
-                </div>
             </div>
         </section>
 
@@ -312,6 +318,16 @@
             </div>
         </section>
 
+        {% if home_poster_image %}
+            <section id="poster" class="py-16" style="background: #ffffff;">
+                <div class="container">
+                    <div class="overflow-hidden rounded-[32px] bg-white shadow-[20px_20px_40px_var(--home-shadow-dark),-20px_-20px_40px_var(--home-shadow-light)]">
+                        <img src="{{ home_poster_image | asset }}" alt="بوستر" class="h-auto w-full object-contain" loading="lazy" />
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+
     <section id="cta" class="pb-24" style="background: #ffffff;">
             <div class="container">
                 <div class="relative overflow-hidden home-cta-card p-10">
@@ -329,6 +345,11 @@
                 </div>
             </div>
         </section>
+        {% if whatsapp_number %}
+            <a href="https://wa.me/{{ whatsapp_number }}{% if whatsapp_message %}?text={{ whatsapp_message | url_encode }}{% endif %}" target="_blank" rel="noopener" class="fixed bottom-6 left-6 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5">
+                {{ whatsapp_label }}
+            </a>
+        {% endif %}
         <style>
             @keyframes marquee-rtl {
                 0% {
