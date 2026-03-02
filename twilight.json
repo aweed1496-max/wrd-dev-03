@@ -280,20 +280,12 @@
                     "menu.url": "/"
                 },
                 {
-                    "menu.title": "خدمات تصميم العلامة",
-                    "menu.url": "#service-branding"
+                    "menu.title": "المنتجات الرقمية",
+                    "menu.url": "/pages/digital-products"
                 },
                 {
-                    "menu.title": "تصميم جرافيك",
-                    "menu.url": "#service-graphic"
-                },
-                {
-                    "menu.title": "موشن جرافيك",
-                    "menu.url": "#service-motion"
-                },
-                {
-                    "menu.title": "دورة العرض الاحترافي",
-                    "menu.url": "#service-pitch"
+                    "menu.title": "خدمات التصميم",
+                    "menu.url": "/pages/design-services"
                 }
             ],
             "fields": [
@@ -343,7 +335,7 @@
             "icon": "sicon-link",
             "label": "ملف PDF لخلفية الخدمات",
             "id": "home_services_pdf",
-            "value": "",
+            "value": "files/services-placeholder.pdf",
             "required": false,
             "format": "text",
             "description": "ارفع ملف PDF من مدير الملفات ثم ضع رابطه هنا ليظهر بالخلفية"
@@ -353,7 +345,7 @@
             "icon": "sicon-format-text-alt",
             "label": "رقم واتساب للتواصل",
             "id": "home_whatsapp_number",
-            "value": "",
+            "value": "966500000000",
             "required": false,
             "format": "text",
             "description": "مثال: 9665XXXXXXXX بدون مسافات"

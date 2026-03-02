@@ -9,21 +9,91 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    <div class="container">
-
-        {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
-        <nav class="breadcrumbs w-full py-5">
-            <salla-breadcrumb></salla-breadcrumb>
-        </nav>
-
-        <div class="flex justify-center">
-            <div class="content content--single-page w-full lg:w-10/12 bg-white rounded p-6 lg:p-8 mt-4 lg:mt-12">
-                <h1 class="font-bold text-2xl mb-6">{{ page.title }}</h1>
-                <div class="content-entry">
-                    {{ page.content|raw }}
+    {% if page.slug == 'digital-products' %}
+        <div class="home-theme" style="background: #ffffff;">
+            <section class="py-16" style="background: #ffffff;">
+                <div class="container">
+                    <div class="max-w-2xl">
+                        <p class="text-sm font-semibold text-violet-600">المنتجات الرقمية</p>
+                        <h1 class="mt-3 text-3xl font-semibold sm:text-4xl">متجر المنتجات الرقمية</h1>
+                        <p class="mt-4 home-text-muted">اعرض منتجاتك الرقمية هنا، ويمكن للعملاء إضافتها للسلة والشراء مباشرة.</p>
+                    </div>
+                    <div class="mt-10">
+                        <salla-products-list source="latest" product-card-component="custom-salla-product-card"></salla-products-list>
+                    </div>
                 </div>
-                <salla-comments item-id="{{page.id}}" type="page"></salla-comments>
+            </section>
+        </div>
+    {% elseif page.slug == 'design-services' %}
+        {% set home_services_pdf = theme.settings.get('home_services_pdf', 'files/services-placeholder.pdf') %}
+        {% set home_poster_image = theme.settings.get('home_poster_image', '') %}
+        {% set whatsapp_number_raw = theme.settings.get('home_whatsapp_number', '') %}
+        {% set whatsapp_message = theme.settings.get('home_whatsapp_message', 'مرحبا، أود طلب الخدمة') %}
+        {% set whatsapp_label = theme.settings.get('home_whatsapp_label', 'اطلب الآن') %}
+        {% set whatsapp_number = whatsapp_number_raw|replace({'+': '', ' ': '', '-': '', '(': '', ')': ''}) %}
+        <div class="home-theme" style="background: #ffffff;">
+            <section class="relative overflow-hidden py-16" style="background: #ffffff;">
+                {% if home_services_pdf %}
+                    <div class="pointer-events-none absolute inset-0 z-0 opacity-25">
+                        <iframe src="{{ home_services_pdf | asset }}" title="ملف الخدمات" class="h-full w-full" style="border: 0;" loading="lazy" aria-hidden="true"></iframe>
+                    </div>
+                {% endif %}
+                <div class="container relative z-10">
+                    <div class="max-w-2xl">
+                        <p class="text-sm font-semibold text-violet-600">خدمات التصميم</p>
+                        <h1 class="mt-3 text-3xl font-semibold sm:text-4xl">حلول تصميم احترافية</h1>
+                        <p class="mt-4 home-text-muted">خدمات تصميم متكاملة مع خلفية PDF قابلة للتبديل من لوحة التحكم.</p>
+                    </div>
+                    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        {% set services = [
+                            {title: 'خدمات تصميم العلامة', desc: 'هوية بصرية متكاملة تشمل الشعار والألوان والتطبيقات.'},
+                            {title: 'تصميم جرافيك', desc: 'تصاميم احترافية للسوشيال والمطبوعات والإعلانات.'},
+                            {title: 'موشن جرافيك', desc: 'حركات ترويجية تعكس قيمة علامتك بوضوح.'},
+                            {title: 'دورة العرض الاحترافي', desc: 'منتج رقمي احترافي لتطوير العروض التقديمية.'}
+                        ] %}
+                        {% for service in services %}
+                            <div class="group home-cta-card p-6 transition hover:-translate-y-1">
+                                <div class="mb-6 h-12 w-12 rounded-2xl bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500"></div>
+                                <h3 class="text-lg font-semibold">{{ service.title }}</h3>
+                                <p class="mt-3 text-sm home-text-muted">{{ service.desc }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            {% if home_poster_image %}
+                <section class="py-16" style="background: #ffffff;">
+                    <div class="container">
+                        <div class="overflow-hidden rounded-[32px] bg-white shadow-[20px_20px_40px_var(--home-shadow-dark),-20px_-20px_40px_var(--home-shadow-light)]">
+                            <img src="{{ home_poster_image | asset }}" alt="بوستر" class="h-auto w-full object-contain" loading="lazy" />
+                        </div>
+                    </div>
+                </section>
+            {% endif %}
+        </div>
+        {% if whatsapp_number %}
+            <a href="https://wa.me/{{ whatsapp_number }}{% if whatsapp_message %}?text={{ whatsapp_message | url_encode }}{% endif %}" target="_blank" rel="noopener" class="fixed bottom-6 left-6 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5">
+                {{ whatsapp_label }}
+            </a>
+        {% endif %}
+    {% else %}
+        <div class="container">
+
+            {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
+            <nav class="breadcrumbs w-full py-5">
+                <salla-breadcrumb></salla-breadcrumb>
+            </nav>
+
+            <div class="flex justify-center">
+                <div class="content content--single-page w-full lg:w-10/12 bg-white rounded p-6 lg:p-8 mt-4 lg:mt-12">
+                    <h1 class="font-bold text-2xl mb-6">{{ page.title }}</h1>
+                    <div class="content-entry">
+                        {{ page.content|raw }}
+                    </div>
+                    <salla-comments item-id="{{page.id}}" type="page"></salla-comments>
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock %}

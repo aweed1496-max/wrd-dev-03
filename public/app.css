@@ -2319,8 +2319,8 @@ input:where([type='file']):focus {
 .opacity-100 {
     opacity: 1;
 }
-.opacity-30 {
-    opacity: 0.3;
+.opacity-25 {
+    opacity: 0.25;
 }
 .opacity-40 {
     opacity: 0.4;
@@ -22831,6 +22831,32 @@ model-viewer[style*=width]:before {
 .product-entry--wishlist salla-button {
     display: flex;
 }
+.s-product-card-entry {
+  background: #ffffff !important;
+  background: var(--home-card-bg, #ffffff) !important;
+  box-shadow: 12px 12px 24px var(--home-shadow-dark), -12px -12px 24px var(--home-shadow-light) !important;
+}
+.s-product-card-entry {
+  border-radius: 24px;
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+.s-product-card-entry:hover {
+  box-shadow: 16px 16px 30px var(--home-shadow-dark), -16px -16px 30px var(--home-shadow-light) !important;
+}
+.s-product-card-entry:hover {
+  transform: translateY(-2px);
+}
+.s-product-card-entry .s-product-card-image,
+.s-product-card-entry .s-product-card-image-full {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+.s-product-card-entry .s-product-card-content {
+  padding-top: 0.75rem;
+}
 .s-comments-page {
     padding-top: 4rem;
 }
@@ -23343,9 +23369,9 @@ input[type=radio].sr-only:checked ~ div.s-product-card-horizontal salla-button.s
     color: rgba(255, 255, 255, var(--tw-text-opacity, 1));
 }
 .s-product-card-sale-price h4 {
-    --tw-text-opacity: 1 !important;
-    color: rgba(153, 27, 27, 1) !important;
-    color: rgba(153, 27, 27, var(--tw-text-opacity, 1)) !important;
+    --tw-text-opacity: 1;
+    color: rgba(153, 27, 27, 1);
+    color: rgba(153, 27, 27, var(--tw-text-opacity, 1));
 }
 .s-product-card-sale-price span {
     color: inherit;
@@ -23353,8 +23379,8 @@ input[type=radio].sr-only:checked ~ div.s-product-card-horizontal salla-button.s
 @media (max-width: 1024px) {
   salla-filters,
   salla-filters > * {
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 }
 #offer-corner-badge {
@@ -23413,7 +23439,7 @@ input[type=radio].sr-only:checked ~ div#offer-corner-badge {
     padding-top: 0px;
 }
 .cart-options salla-product-options .s-product-options-option:not(div.s-product-options-option-booking) {
-    display: block !important;
+    display: block;
 }
 .cart-options salla-product-options-label {
     margin-bottom: 0.75rem;
@@ -23431,7 +23457,7 @@ input[type=radio].sr-only:checked ~ div#offer-corner-badge {
     border-color: rgba(229, 231, 235, var(--tw-border-opacity, 1));
 }
 .cart-options salla-product-options .s-product-options-multiple-options-wrapper {
-    display: block !important;
+    display: block;
 }
 salla-quantity-input[max="1"] input {
     pointer-events: none;

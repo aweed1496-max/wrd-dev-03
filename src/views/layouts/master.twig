@@ -71,12 +71,11 @@
     {% if custom_menu_items is empty %}
         {% set custom_menu_items = [
             {'menu.title': 'الرئيسية', 'menu.url': '/'},
-            {'menu.title': 'خدمات تصميم العلامة', 'menu.url': '#service-branding'},
-            {'menu.title': 'تصميم جرافيك', 'menu.url': '#service-graphic'},
-            {'menu.title': 'موشن جرافيك', 'menu.url': '#service-motion'},
-            {'menu.title': 'دورة العرض الاحترافي', 'menu.url': '#service-pitch'}
+            {'menu.title': 'المنتجات الرقمية', 'menu.url': '/pages/digital-products'},
+            {'menu.title': 'خدمات التصميم', 'menu.url': '/pages/design-services'}
         ] %}
     {% endif %}
+    {% set custom_menu_items = custom_menu_items|slice(0, 3) %}
     <script type="application/json" id="custom-main-menu-data">
         {{ custom_menu_items | json_encode | raw }}
     </script>
